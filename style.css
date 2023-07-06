@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+.pixel {
+    border: solid 1px black;
+    background-color: white;
+    min-width: calc(1rem) ;
+    min-height: calc(1rem);
+    margin: ;
+}
+
+.row {
+
+}
+
+#gridContainer {
+    display: flex;
+    border:1px;
+}
