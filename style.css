@@ -10,18 +10,19 @@ html {
 
 
 .pixel {
-    border: solid 1px black;
+    border: solid 1px gray;
     background-color: white;
     min-width: calc(1rem) ;
     min-height: calc(1rem);
 }
 
-.row {
+.pixel:hover {
+    background-color: black;
 }
 
 #gridContainer {
     display: flex;
     align-items: flex-end;
     width: min-content;
-    border:1px solid black;
+    border:1px solid darkgray;
 }

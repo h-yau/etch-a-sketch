@@ -17,3 +17,10 @@ for (let i = 0; i < 16; i++) {
         row.appendChild(div);
     }
 }
+
+const pixels = document.querySelectorAll('.pixel');
+pixels.forEach((pixel) => {
+    pixel.addEventListener("mouseover", (e) => {
+        e.target.style.backgroundColor = 'black';
+    });
+ });
