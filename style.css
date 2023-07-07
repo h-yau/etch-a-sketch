@@ -14,14 +14,14 @@ html {
     background-color: white;
     min-width: calc(1rem) ;
     min-height: calc(1rem);
-    margin: ;
 }
 
 .row {
-
 }
 
 #gridContainer {
     display: flex;
-    border:1px;
+    align-items: flex-end;
+    width: min-content;
+    border:1px solid black;
 }
