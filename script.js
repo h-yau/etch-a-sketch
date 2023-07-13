@@ -1,15 +1,19 @@
 
-const COLUMN = 16; 
+
+const answer = prompt("Please enter the length of the grid you'd like for the grid box.");
+
+
+const column = answer; 
 
 const gridBox = document.createElement('div');
 gridBox.setAttribute('id', 'gridBox');
-gridBox.setAttribute('style', `grid-template-columns: repeat(${COLUMN}, 1fr);`);
+gridBox.setAttribute('style', `grid-template-columns: repeat(${column}, 1fr);`);
 
 
 document.querySelector('body').appendChild(gridBox);
 
 
-for (let i = 0; i < COLUMN ** 2; i++) {
+for (let i = 0; i < column ** 2; i++) {
 
     const div = document.createElement('div');
     div.setAttribute('class', 'cell');
