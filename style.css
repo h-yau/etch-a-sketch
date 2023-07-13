@@ -9,20 +9,10 @@ html {
 }
 
 
-.pixel {
-    border: solid 1px gray;
-    background-color: white;
-    min-width: calc(1rem) ;
-    min-height: calc(1rem);
+#gridBox {
+    display: grid;
+    width: 200px;
+    height: 200px;
+    border:1px solid black;
 }
 
-.pixel:hover {
-    background-color: black;
-}
-
-#gridContainer {
-    display: flex;
-    align-items: flex-end;
-    width: min-content;
-    border:1px solid darkgray;
-}

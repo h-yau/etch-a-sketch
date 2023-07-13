@@ -1,26 +1,27 @@
-const container = document.createElement('div');
-container.setAttribute('id', 'gridContainer');
 
-document.querySelector('body').appendChild(container);
+const COLUMN = 16; 
 
-for (let i = 0; i < 16; i++) {
+const gridBox = document.createElement('div');
+gridBox.setAttribute('id', 'gridBox');
+gridBox.setAttribute('style', `grid-template-columns: repeat(${COLUMN}, 1fr);`);
 
-    const row = document.createElement('div');
-    row.setAttribute('class', 'row');
 
-    container.appendChild(row);
-    
-    for (let j = 0; j < 16; j++) {
-        const div = document.createElement('div');
-        div.setAttribute('class', 'pixel');
+document.querySelector('body').appendChild(gridBox);
 
-        row.appendChild(div);
-    }
+
+for (let i = 0; i < COLUMN ** 2; i++) {
+
+    const div = document.createElement('div');
+    div.setAttribute('class', 'cell');
+
+    gridBox.appendChild(div);
+
 }
 
-const pixels = document.querySelectorAll('.pixel');
-pixels.forEach((pixel) => {
-    pixel.addEventListener("mouseover", (e) => {
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach((cell) => {
+    cell.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = 'black';
     });
- });
+});
