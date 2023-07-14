@@ -29,3 +29,16 @@ cells.forEach((cell) => {
         e.target.style.backgroundColor = 'black';
     });
 });
+
+
+const clearButton = document.createElement('button');
+clearButton.textContent = 'Clear';
+document.querySelector('body').appendChild(clearButton);
+
+clearButton.addEventListener('click', clearGame);
+
+function clearGame() {
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = 'white';
+    });
+}
