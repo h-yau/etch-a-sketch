@@ -11,7 +11,6 @@ function clearGame() {
 
 function createGridContainer(dimension) {
 
-    console.log(dimension);
     const gridBox = document.createElement('div');
     gridBox.setAttribute('id', 'gridBox');
     document.querySelector('body').appendChild(gridBox);
@@ -21,7 +20,6 @@ function createGrid(dimension) {
 
     const gridBox = document.querySelector('#gridBox');
     gridBox.setAttribute('style', `grid-template-columns: repeat(${dimension}, 1fr);`);
-    console.log(dimension);
 
     for (let i = 0; i < dimension ** 2; i++) {
 
@@ -46,15 +44,47 @@ function removeGrid() {
     }
 }
 
+function checkInput(input) {
+    const form = document.querySelector('#formToResize');
+    let alertMessage = document.querySelector('#alertMessage');
+    if (!(Number.isInteger(input) && input > 0)) {
+
+        if (alertMessage === null) {
+            alertMessage = document.createElement('p');
+            alertMessage.setAttribute('id', 'alertMessage');
+            form.appendChild(alertMessage);
+        }
+
+        alertMessage.textContent = 'Invalid input. Please try again!';
+        return false;
+    }
+
+    if (!(input <= 100)) {
+        if (alertMessage === null) {
+            alertMessage = document.createElement('p');
+            alertMessage.setAttribute('id', 'alertMessage');
+            form.appendChild(alertMessage);
+        }
+
+        alertMessage.textContent = 'That\'s too big! Try a smaller number.';
+        return false;
+    }
+
+    if (alertMessage !== null) {
+        alertMessage.remove();
+    }
+    return true;
+}
+
 function submitSize(event) {
 
     event.preventDefault();
-    console.log("hello");
-    column = formToResize.querySelector('#size').value;
-    alert(column);
-    clearGame();
-    removeGrid();
-    createGrid(column);
+    column = Math.floor(formToResize.querySelector('#size').value);
+    if (checkInput(column)) {
+        clearGame();
+        removeGrid();
+        createGrid(column);
+    }
 }
 
 formToResize.addEventListener('submit', submitSize);
