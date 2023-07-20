@@ -3,7 +3,7 @@ let column = 16;
 
 
 function clearGame() {
-    const cells = document.querySelectorAll('.cells');
+    const cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
         cell.style.backgroundColor = 'white';
     });
