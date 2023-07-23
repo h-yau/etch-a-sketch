@@ -50,8 +50,9 @@ function checkInput(input) {
     if (!(Number.isInteger(input) && input > 0)) {
 
         if (alertMessage === null) {
-            alertMessage = document.createElement('p');
+            alertMessage = document.createElement('div');
             alertMessage.setAttribute('id', 'alertMessage');
+            alertMessage.setAttribute('class', 'alert alert-warning');
             form.appendChild(alertMessage);
         }
 
@@ -61,8 +62,9 @@ function checkInput(input) {
 
     if (!(input <= 100)) {
         if (alertMessage === null) {
-            alertMessage = document.createElement('p');
+            alertMessage = document.createElement('div');
             alertMessage.setAttribute('id', 'alertMessage');
+            alertMessage.setAttribute('class', 'alert alert-warning');
             form.appendChild(alertMessage);
         }
 
@@ -92,6 +94,7 @@ formToResize.addEventListener('submit', submitSize);
 
 const clearButton = document.createElement('button');
 clearButton.textContent = 'Clear';
+clearButton.setAttribute('class', 'btn btn-secondary')
 document.querySelector('body').appendChild(clearButton);
 
 clearButton.addEventListener('click', clearGame);
