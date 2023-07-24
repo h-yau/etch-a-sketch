@@ -99,3 +99,42 @@ document.querySelector('body').appendChild(clearButton);
 
 clearButton.addEventListener('click', clearGame);
 
+const colorButton = document.createElement('button');
+colorButton.textContent = 'GO CRAZY';
+colorButton.setAttribute('class', "rainbow-button");
+document.querySelector('body').appendChild(colorButton);
+
+function goCrazy() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", () =>{
+            cell.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16); 
+        })
+    })
+}
+
+function toToggle() {
+    colorButton.classList.toggle('rainbow-button');
+    colorButton.classList.toggle('black-button');
+}
+
+function goBlack() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", () =>{
+            cell.style.backgroundColor = "black";
+        })
+    })
+}
+
+colorButton.addEventListener('click', (e) =>{
+    e.preventDefault();
+    if (colorButton.textContent === "GO CRAZY") {
+        goCrazy();
+        colorButton.textContent = "Go Black";
+    } else {
+        goBlack();
+        colorButton.textContent = "GO CRAZY";
+    }
+    toToggle();
+});
