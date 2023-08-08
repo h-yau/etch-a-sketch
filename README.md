@@ -1,6 +1,8 @@
 # etch-a-sketch
 Project for Odin Project: Etch a Sketch
 
+![Etch a Sketch Preview](https://nzxzn.github.io/etch-a-sketch/)
+
 This project is a webpage that displays a grid of square divs. The grid is created dynamically using JavaScript and styled using CSS. Users can interact with the grid by hovering over the divs, which changes their color. Additionally, there is a button that allows the user to generate a new grid with a different number of squares per side.
 
 
